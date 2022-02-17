@@ -6,5 +6,7 @@
 ```
 
 ## Arguments
+```
 label: string | Displayed label
 placeholder: string | Placeholder
+```
