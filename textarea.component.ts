@@ -8,7 +8,8 @@ export class TextareaComponent{
 	@Input() ngModel;
 	@Input() label;
 	@Input() placeholder;
-	@Output() ngModelChange = new EventEmitter()
+	@Input() model = false;
+	@Output() modelChange = new EventEmitter()
 	
 	constructor() {}
 }
