@@ -9,8 +9,8 @@ export class TextareaComponent{
 	@Input() name;
 	@Input() placeholder;
 	@Input() disabled;
-	@Input() model;
-	@Output() modelChange = new EventEmitter()
+	@Input() wngModel;
+	@Output()wngModelChange = new EventEmitter()
 
 	constructor() {}
 }
