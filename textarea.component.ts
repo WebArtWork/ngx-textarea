@@ -1,16 +1,32 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ViewChild, ElementRef, OnInit } from '@angular/core';
+
 @Component({
 	selector: 'wtextarea',
 	templateUrl: './textarea.component.html',
 	styleUrls: ['./textarea.component.scss']
 })
-export class TextareaComponent{
-	@Input() ngModel;
-	@Input() label;
-	@Input() placeholder;
-	@Input() disabled;
-	@Input() model = false;
-	@Output() modelChange = new EventEmitter()
+export class TextareaComponent implements OnInit {
+	@Input() set = '';
 
-	constructor() {}
+	@Input() label = '';
+
+	@Input() placeholder = '';
+
+	@Input() disabled: boolean;
+
+	@Input() focused: boolean;
+
+	@Output() change = new EventEmitter();
+
+	@Output() submit = new EventEmitter();
+
+	@ViewChild('inputEl') inputEl: ElementRef;
+
+	ngOnInit() {
+		if (this.focused) {
+			setTimeout(() => {
+				this.inputEl.nativeElement.focus();
+			}, 100);
+		}
+	}
 }

@@ -1,17 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CoreModule } from '@core';
+import { FormsModule } from '@angular/forms';
 import { TextareaComponent } from './textarea.component';
 
 @NgModule({
-	imports: [
-		CoreModule
-	],
-	declarations: [
-		TextareaComponent
-	],
+	imports: [FormsModule],
+	declarations: [TextareaComponent],
 	providers: [],
 	exports: [TextareaComponent]
-
 })
-
-export class TextareaModule { }
+export class TextareaModule {}
